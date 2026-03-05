@@ -177,7 +177,7 @@ function animateOverlay(){
         s.a+=s.s; if(s.a<=0||s.a>=1) s.s*=-1;
         s.y+=s.fall; if(s.y>overlayCanvas.height) s.y=-2;
         overlayCtx.beginPath(); overlayCtx.arc(s.x,s.y,s.r,0,Math.PI*2);
-        overlayCtx.fillStyle=`hsla(270,80%,80%,${s.a})`; overlayCtx.fill();
+        overlayCtx.fillStyle=`hsla(0,80%,75%,${s.a})`; overlayCtx.fill();
     });
     requestAnimationFrame(animateOverlay);   
 }

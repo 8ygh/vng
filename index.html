@@ -7,9 +7,10 @@
 
 <style>
 :root {
-    --primary: #6366f1;
-    --accent: #a855f7;
-    --bg-dark: #01000d;
+:root {
+    --primary: #ef4444;
+    --accent: #f43f5e;
+    --bg-dark: #0b0003;
     --glass: rgba(255, 255, 255, 0.03);
     --glass-border: rgba(255, 255, 255, 0.1);
     --text-main: #f8fafc;
@@ -142,7 +143,7 @@ function animateBG(){
     bgCtx.clearRect(0,0,bgCanvas.width,bgCanvas.height);
     clouds.forEach(c=>{
         const grad=bgCtx.createRadialGradient(c.x,c.y,0,c.x,c.y,c.r);
-        grad.addColorStop(0,`rgba(139,92,246,${c.a})`);
+        grad.addColorStop(0,`rgba(239,68,68,${c.a})`);
         grad.addColorStop(1,'rgba(0,0,0,0)');
         bgCtx.fillStyle=grad;
         bgCtx.fill();
@@ -152,7 +153,7 @@ function animateBG(){
     });
     bgStars.forEach(s=>{
         s.a+=s.s; if(s.a<=0||s.a>=1) s.s*=-1;
-        bgCtx.beginPath(); bgCtx.arc(s.x,s.y,s.r,0,Math.PI*2); bgCtx.fillStyle=`hsla(270,80%,80%,${s.a})`; bgCtx.fill();
+        bgCtx.beginPath(); bgCtx.arc(s.x,s.y,s.r,0,Math.PI*2); bgCtx.fillStyle=`hsla(0,80%,75%,${s.a})`; bgCtx.fill();
     });
     requestAnimationFrame(animateBG);
 }
@@ -179,7 +180,7 @@ function animateOverlay(){
         overlayCtx.beginPath(); overlayCtx.arc(s.x,s.y,s.r,0,Math.PI*2);
         overlayCtx.fillStyle=`hsla(270,80%,80%,${s.a})`; overlayCtx.fill();
     });
-    requestAnimationFrame(animateOverlay);
+    requestAnimationFrame(animateOverlay);   
 }
 
 /* ===== INSTALL BUTTONS ===== */
